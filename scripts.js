@@ -1,9 +1,11 @@
-
+function runGame(){
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
+
+getElementById('scores') = 0;
 
 var paddleSpeed = 6;
 var ballSpeed = 5;
@@ -135,6 +137,10 @@ function loop() {
   for (let i = grid; i < canvas.height - grid; i += grid * 2) {
     context.fillRect(canvas.width / 2 - grid / 2, i, grid, grid);
   }
+
+//   if(ball.x < 0){
+//     document.getElementById('scores')=
+//   }
 }
 
 // listen to keyboard events to move the paddles
@@ -172,3 +178,4 @@ document.addEventListener('keyup', function(e) {
 
 // start the game
 requestAnimationFrame(loop);
+}
