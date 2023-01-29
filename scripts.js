@@ -3,11 +3,16 @@ const context = canvas.getContext('2d');
 const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
-const scoreOne = document.getElementById('PlayerOneScore');
-const scoreTwo = document.getElementById('PlayerTwoScore');
 
+var score1 = 0;
+var score2 = 0;
 var paddleSpeed = 6;
 var ballSpeed = 5;
+score1 = document.getElementById('scoreboard1');
+score2 = document.getElementById('scoreboard2');
+// document.getElementById('scoreboard1') = score1;
+// document.getElementById('scoreboard2') = score2;
+
 
 const leftPaddle = {
   // start in the middle of the game on the left side
@@ -138,10 +143,10 @@ function loop() {
   }
 
   if(ball.x < 0){
-    scoreTwo = scoreTwo + 1;
+    score2 = score2 + 1;
   }
   else if(ball.x > 750){
-    scoreOne = scoreOne + 1;
+    score1 = score1 + 1;
   }
 }
 
