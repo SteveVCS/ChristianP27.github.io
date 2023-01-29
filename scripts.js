@@ -3,6 +3,8 @@ const context = canvas.getContext('2d');
 const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
+const scoreOne = document.getElementById('PlayerOneScore');
+const scoreTwo = document.getElementById('PlayerTwoScore');
 
 var paddleSpeed = 6;
 var ballSpeed = 5;
@@ -135,6 +137,12 @@ function loop() {
     context.fillRect(canvas.width / 2 - grid / 2, i, grid, grid);
   }
 
+  if(ball.x < 0){
+    scoreTwo = scoreTwo + 1;
+  }
+  else if(ball.x > 750){
+    scoreOne = scoreOne + 1;
+  }
 }
 
 // listen to keyboard events to move the paddles
