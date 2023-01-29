@@ -12,3 +12,8 @@
     justify-content: center;
   }
    
+  table.th {
+    padding: 3px;
+    background-color: darkgreen;
+    text-align: center;
+  }
