@@ -134,14 +134,7 @@ function loop() {
   for (let i = grid; i < canvas.height - grid; i += grid * 2) {
     context.fillRect(canvas.width / 2 - grid / 2, i, grid, grid);
   }
-// function changescores(){
-//   if(ball.x < 0){
-//     return h++;
-//   }
-//   else {
-//     return a++;
-//   }
-// }
+
 }
 
 // listen to keyboard events to move the paddles
