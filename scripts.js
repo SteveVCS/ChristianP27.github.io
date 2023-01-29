@@ -9,8 +9,7 @@ var score2 = 0;
 var paddleSpeed = 6;
 var ballSpeed = 5;
 
-document.getElementById('scoreboard1') = score1;
-document.getElementById('scoreboard2') = score2;
+
 
 
 const leftPaddle = {
