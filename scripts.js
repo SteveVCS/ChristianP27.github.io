@@ -1,3 +1,7 @@
+//  Name: Christian Perry
+//  ID: 800657821
+//  Project 1
+
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 const grid = 15;
@@ -6,7 +10,7 @@ const maxPaddleY = canvas.height - grid - paddleHeight;
 
 
 var paddleSpeed = 6;
-var ballSpeed = 5;
+var ballSpeed = 1.5;
 
 function update(){
   if(ball.x < 0){
