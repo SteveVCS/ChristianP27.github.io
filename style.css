@@ -1,4 +1,11 @@
 /* Style Page for Pong game */
+/* 
+Name: Christian Perry
+ID: 800657821
+Project 1 
+  
+  */
+
 
   html, body {
     height: 100%;
@@ -12,33 +19,4 @@
     justify-content: center;
   }
    
-  table.th {
-    padding: 3px;
-    background-color: darkgreen;
-    text-align: center;
-  }
 
-  .scoreboard1  {
-    width: 200px;
-    height: 200px;
-    align-content: center;
-    position: fixed;
-    position: left 5%;
-
-  }
-
-  .scoreboard2 {
-    width: 200px;
-    height: 200px;
-    align-content: center;
-    position: fixed;
-    position: right 5%;
-
-  }
-
-  h2 {
-    font-size: xx-large;
-    font-weight: 200;
-    text-align: center;
-    
-  }

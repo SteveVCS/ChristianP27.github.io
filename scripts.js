@@ -1,15 +1,35 @@
+//  Name: Christian Perry
+//  ID: 800657821
+//  Project 1
+
 const canvas = document.getElementById('game');
 const context = canvas.getContext('2d');
 const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
 
-var score1 = 0;
-var score2 = 0;
+
 var paddleSpeed = 6;
-var ballSpeed = 5;
+var ballSpeed = 1.5;
+
+function update(){
+  if(ball.x < 0){
+    rightPaddle.Score ++;
+  }
+  else if(ball.x > canvas.width){
+    leftPaddle.Score ++;
+  }
+
+}
 
 
+function drawText(text,x,y,color){
+  context.fillStyle = color;
+  context.font = "45px fantasy";
+  context.fillText(text,x, y);
+
+
+}
 
 
 const leftPaddle = {
@@ -18,6 +38,7 @@ const leftPaddle = {
   y: canvas.height / 2 - paddleHeight / 2,
   width: grid,
   height: paddleHeight,
+  Score : 0,
 
   // paddle velocity
   dy: 0
@@ -28,6 +49,7 @@ const rightPaddle = {
   y: canvas.height / 2 - paddleHeight / 2,
   width: grid,
   height: paddleHeight,
+  Score : 0,
 
   // paddle velocity
   dy: 0
@@ -89,6 +111,12 @@ function loop() {
   ball.x += ball.dx;
   ball.y += ball.dy;
 
+
+  // draw the scoreboard
+    drawText(leftPaddle.Score,canvas.width/4,canvas.height/5,"green");
+    drawText(rightPaddle.Score,3*canvas.width/4,canvas.height/5,"green");
+
+
   // prevent ball from going through walls by changing its velocity
   if (ball.y < grid) {
     ball.y = grid;
@@ -102,6 +130,7 @@ function loop() {
   // reset ball if it goes past paddle (but only if we haven't already done so)
   if ( (ball.x < 0 || ball.x > canvas.width) && !ball.resetting) {
     ball.resetting = true;
+    update();
 
     // give some time for the player to recover before launching the ball again
     setTimeout(() => {
