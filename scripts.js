@@ -18,7 +18,10 @@ function update(){
   else if(ball.x > canvas.width){
     leftPaddle.Score ++;
   }
-
+  
+  if (leftPaddle.Score === 7 || rightPaddle.Score === 7) {
+    alert(`Game Over`);
+  }
 }
 
 
