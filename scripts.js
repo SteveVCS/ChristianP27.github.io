@@ -51,6 +51,7 @@ function movePaddleAI() {
     leftPaddle.dy = 0;
   }
 }
+
 const leftPaddle = {
   // start in the middle of the game on the left side
   x: grid * 2,
