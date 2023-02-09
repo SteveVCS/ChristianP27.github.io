@@ -101,6 +101,7 @@ function collides(obj1, obj2) {
 // game loop
 function loop() {
   requestAnimationFrame(loop);
+  movePaddleAI();
   context.clearRect(0,0,canvas.width,canvas.height);
 
   // move paddles by their velocity
