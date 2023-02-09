@@ -11,25 +11,46 @@ const maxPaddleY = canvas.height - grid - paddleHeight;
 var paddleSpeed = 6;
 var ballSpeed = 1.5;
 
-function update(){
-  if(ball.x < 0){
-    rightPaddle.Score ++;
+//restart the whole game
+function gameOver() {
+  alert(`Game Over`);
+  let playAgain = confirm("Play Again");
+  if (playAgain) {
+    leftPaddle.Score = 0;
+    rightPaddle.Score = 0;
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
   }
-  else if(ball.x > canvas.width){
+}
+//ending the game
+function update() {
+  if (ball.x < 0) {
+    rightPaddle.Score ++;
+  } else if (ball.x > canvas.width) {
     leftPaddle.Score ++;
   }
-
+  if (leftPaddle.Score === 7 || rightPaddle.Score === 7) {
+    gameOver();
+  }
 }
-
-
+//style
 function drawText(text,x,y,color){
   context.fillStyle = color;
   context.font = "45px fantasy";
   context.fillText(text,x, y);
-
-
 }
-
+// AI command for Left paddle to follow 
+function movePaddleAI() {
+  if (ball.dx < 0) {
+    if (ball.y < leftPaddle.y + leftPaddle.height / 2) {
+      leftPaddle.dy = -paddleSpeed;
+    } else {
+      leftPaddle.dy = paddleSpeed;
+    }
+  } else {
+    leftPaddle.dy = 0;
+  }
+}
 
 const leftPaddle = {
   // start in the middle of the game on the left side
