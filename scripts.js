@@ -9,7 +9,7 @@ const maxPaddleY = canvas.height - grid - paddleHeight;
 
 
 var paddleSpeed = 6;
-var ballSpeed = 1.5;
+var ballSpeed = 4;
 
 //restart the whole game
 function gameOver() {
